@@ -14,7 +14,7 @@ physical laws (via a PINN) into a neural network improves prediction accuracy an
 generalizability compared to a standard data-driven model.
 
 ## Methodology
-- **Base model:** Lockhart-Martinelli correlation for two-phase pressure drop
+- **Base model:** prediction of regime and frictional multiplier for each regime, thus resulting multiplier and separately calculated single phase liquid pressure drop is input for Lockhart-Martinelli correlation for two-phase pressure drop
 - **Approach:** Physics-Informed Neural Network (PINN) built in Python using PyTorch
 - **Comparison model:** Standard Artificial Neural Network (ANN), trained on the same 
   dataset without physics-based constraints
@@ -33,7 +33,8 @@ logRMSE for frictional multiplier, logRMSE two phase flow, classification accura
 - In regime-wise comparison, PINN performed better than ANN in slug flow, while they were comparable for stratified 
 and for annular flow, both models showed high errors
 - Conclusion is that including physics constraints in neural networks for pressure drop prediction is better,
-  however, lack of momentum balances for gas and liquid phases resulted in errors in annular flow specifically
+however, lack of momentum balances for gas and liquid phases and high variance in various experimental setups considered
+resulted in errors in annular flow specifically 
 
 ## Tools & Libraries
 - Python
